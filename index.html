@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abel Sánchez Ramos — Administrador de Sistemas Junior | Ciberseguridad</title>
+<meta name="description" content="Portfolio profesional de Abel Sánchez Ramos, Administrador de Sistemas Junior especializado en Ciberseguridad, Microsoft 365, Azure AD y Active Directory. Huelva.">
+<meta property="og:title" content="Abel Sánchez Ramos — Administrador de Sistemas Junior">
+<meta property="og:description" content="Administrador de Sistemas IT especializado en Ciberseguridad. Microsoft 365, Azure AD, Active Directory, soporte técnico e infraestructura.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0c111c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c111c;
+    --bg-raise:#101827;
+    --surface:#141d2e;
+    --surface-2:#182338;
+    --border:#26314a;
+    --border-soft:#1c2538;
+    --text:#e7ebf4;
+    --text-dim:#a8b1c4;
+    --text-faint:#6b7690;
+    --accent:#49d5c4;
+    --accent-dim:#2b8f83;
+    --accent-soft:rgba(73,213,196,0.12);
+    --warn:#e8b158;
+    --font-display:'Space Grotesk', sans-serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+    --radius:10px;
+    --max:1120px;
+  }
+
+  @media (prefers-color-scheme: light){ }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+  ul{ margin:0; padding:0; list-style:none; }
+  img{ max-width:100%; display:block; }
+
+  ::selection{ background:var(--accent); color:#06120f; }
+
+  :focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    color:var(--accent);
+    text-transform:uppercase;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:0 0 18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:16px;
+    height:1px;
+    background:var(--accent-dim);
+    display:inline-block;
+  }
+
+  h1,h2,h3{
+    font-family:var(--font-display);
+    font-weight:600;
+    color:var(--text);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  section{ padding:96px 0; border-bottom:1px solid var(--border-soft); }
+  section:last-of-type{ border-bottom:none; }
+
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:24px;
+    margin-bottom:48px;
+    flex-wrap:wrap;
+  }
+  .section-head h2{ font-size:clamp(26px,3.4vw,34px); }
+  .section-num{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--text-faint);
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(12,17,28,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--max);
+    margin:0 auto;
+  }
+  .brand{
+    font-family:var(--font-mono);
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.02em;
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .brand .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 3px var(--accent-soft);
+  }
+  nav.links{ display:flex; gap:30px; }
+  nav.links a{
+    font-size:14px;
+    color:var(--text-dim);
+    transition:color .15s ease;
+  }
+  nav.links a:hover{ color:var(--text); }
+  .nav-cta{
+    display:flex; gap:12px; align-items:center;
+  }
+  .btn{
+    font-family:var(--font-mono);
+    font-size:13px;
+    padding:10px 18px;
+    border-radius:7px;
+    border:1px solid var(--border);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:border-color .15s ease, background .15s ease, transform .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{ border-color:var(--accent-dim); transform:translateY(-1px); }
+  .btn-primary{
+    background:var(--accent);
+    color:#06120f;
+    border-color:var(--accent);
+    font-weight:600;
+  }
+  .btn-primary:hover{ background:#5be3d2; border-color:#5be3d2; }
+
+  .menu-toggle{ display:none; background:none; border:1px solid var(--border); border-radius:7px; padding:8px 10px; }
+  .menu-toggle svg{ display:block; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 100px;
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid var(--border-soft);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:56px;
+    align-items:center;
+    position:relative;
+    z-index:1;
+  }
+  .status-chip{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--accent);
+    background:var(--accent-soft);
+    border:1px solid rgba(73,213,196,0.3);
+    padding:6px 12px;
+    border-radius:20px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:26px;
+  }
+  .status-chip .pulse{
+    width:6px; height:6px; border-radius:50%; background:var(--accent);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ opacity:1; }
+    50%{ opacity:0.35; }
+  }
+
+  .hero h1{
+    font-size:clamp(38px,5.2vw,58px);
+    line-height:1.05;
+    margin-bottom:20px;
+  }
+  .hero h1 span{ color:var(--accent); }
+
+  .hero-desc{
+    font-size:17px;
+    color:var(--text-dim);
+    max-width:52ch;
+    margin-bottom:14px;
+  }
+  .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--text-faint);
+    margin-bottom:34px;
+  }
+  .hero-meta span{ display:flex; align-items:center; gap:7px; }
+
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+
+  /* hero visual panel */
+  .panel{
+    background:linear-gradient(180deg, var(--surface) 0%, var(--bg-raise) 100%);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:22px;
+    position:relative;
+  }
+  .panel-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:16px;
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--text-faint);
+    letter-spacing:0.04em;
+  }
+  .panel-head .lights{ display:flex; gap:6px; }
+  .panel-head .lights i{ width:7px; height:7px; border-radius:50%; background:var(--border); display:block; }
+
+  .avatar-wrap{
+    display:flex; align-items:center; gap:16px;
+    padding-bottom:18px;
+    border-bottom:1px dashed var(--border);
+    margin-bottom:18px;
+  }
+  .avatar{
+    width:64px; height:64px; border-radius:50%;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono);
+    font-weight:600;
+    font-size:17px;
+    color:var(--accent);
+    flex-shrink:0;
+  }
+  .avatar-name{ font-weight:600; font-size:15px; color:var(--text); }
+  .avatar-role{ font-size:12.5px; color:var(--text-faint); font-family:var(--font-mono); }
+
+  .metric-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .metric{
+    background:var(--surface-2);
+    border:1px solid var(--border-soft);
+    border-radius:8px;
+    padding:12px 10px;
+    text-align:center;
+  }
+  .metric .num{
+    font-family:var(--font-mono);
+    font-size:19px;
+    font-weight:600;
+    color:var(--accent);
+    display:block;
+  }
+  .metric .lbl{
+    font-size:10.5px;
+    color:var(--text-faint);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+
+  .stack-preview{ display:flex; flex-wrap:wrap; gap:8px; }
+  .tag{
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--text-dim);
+    background:var(--surface-2);
+    border:1px solid var(--border-soft);
+    padding:5px 10px;
+    border-radius:6px;
+  }
+
+  /* background node lines */
+  .node-field{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    opacity:0.5;
+    pointer-events:none;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .about-grid p{
+    color:var(--text-dim);
+    font-size:16px;
+    margin:0 0 16px;
+  }
+  .about-grid p:last-child{ margin-bottom:0; }
+  .focus-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .focus-item{
+    display:flex;
+    gap:14px;
+    padding:16px;
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:10px;
+  }
+  .focus-item .idx{
+    font-family:var(--font-mono);
+    color:var(--accent);
+    font-size:13px;
+    flex-shrink:0;
+    padding-top:2px;
+  }
+  .focus-item h3{ font-size:15px; font-weight:600; margin-bottom:4px; }
+  .focus-item p{ font-size:13.5px; color:var(--text-faint); margin:0; }
+
+  /* ---------- STACK ---------- */
+  .stack-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:18px;
+  }
+  .stack-card{
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:12px;
+    padding:22px;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .stack-card:hover{ border-color:var(--accent-dim); transform:translateY(-2px); }
+  .stack-card-head{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:16px;
+  }
+  .stack-icon{
+    width:34px; height:34px;
+    border-radius:8px;
+    background:var(--accent-soft);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--accent);
+    flex-shrink:0;
+  }
+  .stack-card h3{ font-size:15.5px; }
+  .stack-items{ display:flex; flex-direction:column; gap:9px; }
+  .stack-items li{
+    font-size:14px;
+    color:var(--text-dim);
+    display:flex;
+    align-items:center;
+    gap:9px;
+  }
+  .stack-items li::before{
+    content:"";
+    width:5px; height:5px;
+    border-radius:1px;
+    background:var(--accent-dim);
+    flex-shrink:0;
+  }
+
+  /* ---------- EXPERIENCE (timeline as trace route) ---------- */
+  .timeline{
+    position:relative;
+    padding-left:34px;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:6px; top:6px; bottom:6px;
+    width:1px;
+    background:repeating-linear-gradient(to bottom, var(--border) 0, var(--border) 4px, transparent 4px, transparent 9px);
+  }
+  .tl-item{
+    position:relative;
+    margin-bottom:44px;
+  }
+  .tl-item:last-child{ margin-bottom:0; }
+  .tl-node{
+    position:absolute;
+    left:-34px;
+    top:4px;
+    width:13px; height:13px;
+    border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--accent);
+  }
+  .tl-node::after{
+    content:"";
+    position:absolute;
+    inset:3px;
+    border-radius:50%;
+    background:var(--accent);
+  }
+  .tl-date{
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--accent);
+    margin-bottom:8px;
+    display:block;
+  }
+  .tl-card{
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:12px;
+    padding:24px 26px;
+  }
+  .tl-title-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom:4px;
+  }
+  .tl-role{ font-size:18px; font-weight:600; font-family:var(--font-display); }
+  .tl-company{
+    font-size:14px;
+    color:var(--text-faint);
+    margin-bottom:16px;
+  }
+  .tl-company b{ color:var(--text-dim); font-weight:500; }
+  .tl-list{ display:flex; flex-direction:column; gap:9px; margin-bottom:16px; }
+  .tl-list li{
+    font-size:14.5px;
+    color:var(--text-dim);
+    padding-left:16px;
+    position:relative;
+  }
+  .tl-list li::before{
+    content:"›";
+    position:absolute;
+    left:0;
+    color:var(--accent);
+  }
+  .tl-tags{ display:flex; flex-wrap:wrap; gap:7px; }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:18px;
+  }
+  .edu-card{
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:12px;
+    padding:22px;
+    border-left:2px solid var(--accent-dim);
+  }
+  .edu-date{
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--accent);
+    margin-bottom:10px;
+    display:block;
+  }
+  .edu-card h3{ font-size:16px; margin-bottom:6px; line-height:1.3; }
+  .edu-card .edu-center{ font-size:13.5px; color:var(--text-faint); }
+
+  /* ---------- CERTIFICACIONES ---------- */
+  .cert-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:18px;
+  }
+  .cert-card{
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:12px;
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .cert-card:hover{ border-color:var(--accent-dim); transform:translateY(-2px); }
+  .cert-top{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .cert-icon{
+    width:36px; height:36px;
+    border-radius:8px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .cert-card h3{ font-size:15px; line-height:1.35; margin-bottom:3px; }
+  .cert-issuer{ font-size:13px; color:var(--text-faint); }
+  .cert-date{
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    color:var(--accent);
+  }
+  .cert-skills{
+    font-size:13px;
+    color:var(--text-dim);
+    line-height:1.5;
+  }
+  .cert-skills b{ color:var(--text-dim); font-weight:500; }
+  .cert-id{
+    font-family:var(--font-mono);
+    font-size:11px;
+    color:var(--text-faint);
+    padding-top:10px;
+    border-top:1px dashed var(--border);
+    margin-top:2px;
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:14px;
+  }
+  .skill-pill{
+    background:var(--surface);
+    border:1px solid var(--border-soft);
+    border-radius:10px;
+    padding:16px 18px;
+    font-size:14.5px;
+    color:var(--text-dim);
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .skill-pill svg{ color:var(--accent); flex-shrink:0; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-panel{
+    background:linear-gradient(160deg, var(--surface) 0%, var(--bg-raise) 100%);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:56px;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:40px;
+    align-items:center;
+  }
+  .contact-panel h2{ font-size:clamp(26px,3.2vw,36px); margin-bottom:14px; }
+  .contact-panel p{ color:var(--text-dim); font-size:15.5px; max-width:44ch; margin:0; }
+  .contact-list{ display:flex; flex-direction:column; gap:12px; }
+  .contact-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px 16px;
+    background:var(--surface-2);
+    border:1px solid var(--border-soft);
+    border-radius:9px;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .contact-row:hover{ border-color:var(--accent-dim); transform:translateX(3px); }
+  .contact-row .ic{
+    width:32px; height:32px;
+    border-radius:7px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .contact-row .lbl{ font-size:11px; color:var(--text-faint); font-family:var(--font-mono); text-transform:uppercase; letter-spacing:0.04em; }
+  .contact-row .val{ font-size:14.5px; color:var(--text); font-weight:500; }
+
+  footer{
+    padding:32px 0;
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--text-faint);
+  }
+
+  /* reveal on scroll */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- SCROLL PROGRESS ---------- */
+  .scroll-progress{
+    position:fixed;
+    top:0; left:0;
+    height:2px;
+    width:0%;
+    background:linear-gradient(90deg, var(--accent-dim), var(--accent));
+    z-index:80;
+    transition:width .08s linear;
+  }
+
+  /* ---------- NAV ACTIVE STATE ---------- */
+  nav.links a{ position:relative; padding-bottom:4px; }
+  nav.links a::after{
+    content:"";
+    position:absolute;
+    left:0; right:100%;
+    bottom:-1px;
+    height:1.5px;
+    background:var(--accent);
+    transition:right .25s ease;
+  }
+  nav.links a.active{ color:var(--text); }
+  nav.links a.active::after{ right:0; }
+
+  /* ---------- MOBILE MENU ---------- */
+  .menu-toggle{
+    display:none;
+    cursor:pointer;
+    color:var(--text-dim);
+  }
+  .menu-toggle:hover{ color:var(--text); }
+  .mobile-menu{
+    position:fixed;
+    inset:0;
+    z-index:60;
+    background:rgba(9,13,21,0.98);
+    backdrop-filter:blur(6px);
+    display:flex;
+    flex-direction:column;
+    padding:24px 28px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-8px);
+    transition:opacity .22s ease, transform .22s ease, visibility .22s;
+  }
+  .mobile-menu.open{ opacity:1; visibility:visible; transform:translateY(0); }
+  .mobile-menu-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+  }
+  .mobile-menu-close{
+    background:none; border:1px solid var(--border); border-radius:7px;
+    padding:8px 10px; color:var(--text-dim); cursor:pointer;
+  }
+  .mobile-menu nav{ display:flex; flex-direction:column; gap:4px; }
+  .mobile-menu nav a{
+    font-family:var(--font-display);
+    font-size:26px;
+    font-weight:600;
+    color:var(--text-dim);
+    padding:14px 4px;
+    border-bottom:1px solid var(--border-soft);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .mobile-menu nav a:hover, .mobile-menu nav a.active{ color:var(--accent); }
+  .mobile-menu nav a .tag-num{ font-family:var(--font-mono); font-size:12px; color:var(--text-faint); }
+  .mobile-menu-cta{ margin-top:auto; display:flex; flex-direction:column; gap:12px; padding-top:24px; }
+
+  /* ---------- HERO CANVAS ---------- */
+  .hero-canvas{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    opacity:0.55;
+    pointer-events:none;
+  }
+
+  /* ---------- LIVE CLOCK ---------- */
+  .live-clock{
+    display:flex;
+    align-items:center;
+    gap:7px;
+  }
+  .live-clock .rec{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--accent);
+    animation:pulse 2s ease-in-out infinite;
+  }
+
+  /* ---------- COPY BUTTON ---------- */
+  .contact-row{ position:relative; }
+  .copy-btn{
+    margin-left:auto;
+    background:none;
+    border:1px solid var(--border);
+    border-radius:6px;
+    width:30px; height:30px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--text-faint);
+    cursor:pointer;
+    flex-shrink:0;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .copy-btn:hover{ border-color:var(--accent-dim); color:var(--accent); }
+  .copy-btn.copied{ color:var(--accent); border-color:var(--accent); }
+
+  /* ---------- TOAST ---------- */
+  .toast-stack{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    z-index:90;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:flex-end;
+  }
+  .toast{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--text);
+    background:var(--surface-2);
+    border:1px solid var(--accent-dim);
+    border-radius:8px;
+    padding:11px 16px;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.35);
+    opacity:0;
+    transform:translateY(8px);
+    animation:toast-in .25s ease forwards, toast-out .25s ease forwards 2.4s;
+  }
+  .toast svg{ color:var(--accent); flex-shrink:0; }
+  @keyframes toast-in{ to{ opacity:1; transform:translateY(0); } }
+  @keyframes toast-out{ to{ opacity:0; transform:translateY(-6px); } }
+
+  /* ---------- BACK TO TOP ---------- */
+  .to-top{
+    position:fixed;
+    right:24px;
+    bottom:24px;
+    width:44px; height:44px;
+    border-radius:50%;
+    background:var(--surface);
+    border:1px solid var(--border);
+    color:var(--text-dim);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    z-index:55;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(10px);
+    transition:opacity .25s ease, transform .25s ease, visibility .25s, border-color .15s ease, color .15s ease;
+  }
+  .to-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
+  .to-top:hover{ border-color:var(--accent-dim); color:var(--accent); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .about-grid{ grid-template-columns:1fr; }
+    .contact-panel{ grid-template-columns:1fr; padding:38px 26px; }
+    nav.links{ display:none; }
+    .menu-toggle{ display:flex; align-items:center; justify-content:center; }
+  }
+  @media (max-width:640px){
+    section{ padding:64px 0; }
+    .wrap{ padding:0 20px; }
+    .hero{ padding:56px 0 64px; }
+    .metric-row{ grid-template-columns:repeat(3,1fr); }
+    .nav-cta .btn span.full{ display:none; }
+    .contact-panel{ padding:30px 18px; }
+    .toast-stack{ left:16px; right:16px; align-items:stretch; }
+    .to-top{ right:16px; bottom:16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="dot"></span>ASR<span style="color:var(--text-faint); font-weight:400;">/systems</span></a>
+    <nav class="links" id="navLinks">
+      <a href="#sobre-mi" data-nav>Sobre mí</a>
+      <a href="#stack" data-nav>Stack</a>
+      <a href="#experiencia" data-nav>Experiencia</a>
+      <a href="#formacion" data-nav>Formación</a>
+      <a href="#certificaciones" data-nav>Certificaciones</a>
+      <a href="#habilidades" data-nav>Habilidades</a>
+      <a href="#contacto" data-nav>Contacto</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn" href="./CV_Abel_Sanchez_Ramos.pdf" download><span class="full">Descargar</span> CV</a>
+      <a class="btn btn-primary" href="#contacto">Contactar</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <a href="#top" class="brand"><span class="dot"></span>ASR<span style="color:var(--text-faint); font-weight:400;">/systems</span></a>
+    <button class="mobile-menu-close" id="menuClose" aria-label="Cerrar menú">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 6-12 12M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="#sobre-mi" data-nav-mobile><span>Sobre mí</span><span class="tag-num">01</span></a>
+    <a href="#stack" data-nav-mobile><span>Stack</span><span class="tag-num">02</span></a>
+    <a href="#experiencia" data-nav-mobile><span>Experiencia</span><span class="tag-num">03</span></a>
+    <a href="#formacion" data-nav-mobile><span>Formación</span><span class="tag-num">04</span></a>
+    <a href="#certificaciones" data-nav-mobile><span>Certificaciones</span><span class="tag-num">05</span></a>
+    <a href="#habilidades" data-nav-mobile><span>Habilidades</span><span class="tag-num">06</span></a>
+    <a href="#contacto" data-nav-mobile><span>Contacto</span><span class="tag-num">07</span></a>
+  </nav>
+  <div class="mobile-menu-cta">
+    <a class="btn" href="./CV_Abel_Sanchez_Ramos.pdf" download>Descargar CV (PDF)</a>
+    <a class="btn btn-primary" href="#contacto">Contactar</a>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Presentación">
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="status-chip"><span class="pulse"></span> DISPONIBLE PARA INCORPORACIÓN</span>
+        <h1>Administrador de Sistemas <span>&amp; Ciberseguridad</span></h1>
+        <p class="hero-desc">Abel Sánchez Ramos. Administro identidades, dispositivos y accesos en entornos Microsoft 365 / Azure AD, y doy soporte técnico a usuarios finales con foco en resolver incidencias rápido y bien documentado.</p>
+        <div class="hero-meta">
+          <span>📍 San Juan del Puerto, Huelva</span>
+          <span>🎓 Especialización en Ciberseguridad — en curso</span>
+          <span>🚗 Carnet B</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contacto">Hablemos →</a>
+          <a class="btn" href="./CV_Abel_Sanchez_Ramos.pdf" download>Descargar CV (PDF)</a>
+        </div>
+      </div>
+
+      <div class="panel" role="img" aria-label="Panel resumen de perfil técnico">
+        <div class="panel-head">
+          <span id="panelPath">~/perfil/abel-sanchez</span>
+          <span class="live-clock" id="liveClock"><span class="rec"></span><span id="clockText">--:--:--</span></span>
+        </div>
+        <div class="avatar-wrap">
+          <div class="avatar">AS</div>
+          <div>
+            <div class="avatar-name">Abel Sánchez Ramos</div>
+            <div class="avatar-role">Administrador de Sistemas Junior</div>
+          </div>
+        </div>
+        <div class="metric-row">
+          <div class="metric"><span class="num" data-count="2">0</span><span class="lbl">Prácticas IT</span></div>
+          <div class="metric"><span class="num" data-count="3">0</span><span class="lbl">Titulaciones</span></div>
+          <div class="metric"><span class="num">B1</span><span class="lbl">Inglés</span></div>
+        </div>
+        <div class="stack-preview">
+          <span class="tag">Microsoft 365</span>
+          <span class="tag">Azure AD</span>
+          <span class="tag">Active Directory</span>
+          <span class="tag">Windows/Linux Server</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">01 — Perfil</p>
+          <h2>Sobre mí</h2>
+        </div>
+        <span class="section-num">/sobre-mi</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="reveal">
+          <p>Soy Administrador de Sistemas Junior, formado en el itinerario de Sistemas Microinformáticos en Red y Administración de Sistemas Informáticos en Red, y actualmente cursando una especialización en Ciberseguridad. He trabajado en dos entornos corporativos distintos —industrial y sanitario— administrando Microsoft 365, Azure AD y Active Directory, y dando soporte técnico a usuarios en departamentos con necesidades y niveles de exigencia diferentes.</p>
+          <p>Me interesa la parte de infraestructura y seguridad de los sistemas: gestión de identidades y accesos, hardening, control de accesos y copias de seguridad, además de la resolución de incidencias del día a día. Busco incorporarme a un equipo de sistemas, redes o soporte IT donde pueda seguir creciendo hacia perfiles de administración de infraestructura y ciberseguridad.</p>
+        </div>
+
+        <div class="focus-list reveal">
+          <div class="focus-item">
+            <span class="idx">01</span>
+            <div>
+              <h3>Identidad y acceso</h3>
+              <p>Administración de usuarios, permisos y control de accesos en Microsoft 365 / Azure AD / Active Directory.</p>
+            </div>
+          </div>
+          <div class="focus-item">
+            <span class="idx">02</span>
+            <div>
+              <h3>Soporte e incidencias</h3>
+              <p>Resolución de incidencias de hardware, software y redes, con foco en mejorar tiempos de respuesta.</p>
+            </div>
+          </div>
+          <div class="focus-item">
+            <span class="idx">03</span>
+            <div>
+              <h3>Seguridad de sistemas</h3>
+              <p>Hardening, gestión de vulnerabilidades y copias de seguridad como parte de la protección de la infraestructura.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">02 — Tecnologías</p>
+          <h2>Stack técnico</h2>
+        </div>
+        <span class="section-num">/stack</span>
+      </div>
+
+      <div class="stack-grid">
+        <div class="stack-card reveal">
+          <div class="stack-card-head">
+            <div class="stack-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Sistemas y Cloud</h3>
+          </div>
+          <ul class="stack-items">
+            <li>Microsoft 365</li>
+            <li>Active Directory</li>
+            <li>Windows / Linux</li>
+            <li>Windows Server / Linux Server</li>
+          </ul>
+        </div>
+
+        <div class="stack-card reveal">
+          <div class="stack-card-head">
+            <div class="stack-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3>Ciberseguridad</h3>
+          </div>
+          <ul class="stack-items">
+            <li>Gestión de identidades y accesos (IAM)</li>
+            <li>Hardening de sistemas</li>
+            <li>Control de accesos</li>
+            <li>Copias de seguridad</li>
+            <li>Gestión de vulnerabilidades</li>
+          </ul>
+        </div>
+
+        <div class="stack-card reveal">
+          <div class="stack-card-head">
+            <div class="stack-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7l-9-5Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3>Soporte IT</h3>
+          </div>
+          <ul class="stack-items">
+            <li>Resolución de incidencias</li>
+            <li>Soporte remoto</li>
+            <li>Instalación y configuración de equipos</li>
+            <li>Hardware y software</li>
+          </ul>
+        </div>
+
+        <div class="stack-card reveal">
+          <div class="stack-card-head">
+            <div class="stack-icon">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Herramientas</h3>
+          </div>
+          <ul class="stack-items">
+            <li>Microsoft 365 Admin Center</li>
+            <li>Azure Portal</li>
+            <li>AnyDesk / TeamViewer / RustDesk</li>
+            <li>VMware / VirtualBox / Proxmox</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section id="experiencia">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">03 — Trayectoria</p>
+          <h2>Experiencia</h2>
+        </div>
+        <span class="section-num">/experiencia</span>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-node"></div>
+          <span class="tl-date">MAR 2025 — JUN 2025</span>
+          <div class="tl-card">
+            <div class="tl-title-row">
+              <span class="tl-role">Estudiante en Prácticas · Administrador de Sistemas IT</span>
+            </div>
+            <div class="tl-company"><b>Geotexan S.A.</b> · Minas de Riotinto, Huelva</div>
+            <ul class="tl-list">
+              <li>Administración de Microsoft 365, Azure AD y Active Directory en entorno corporativo.</li>
+              <li>Soporte técnico a usuarios, resolviendo incidencias y mejorando tiempos de respuesta.</li>
+              <li>Gestión de usuarios, permisos y control de accesos.</li>
+              <li>Participación en mejoras de infraestructura IT y procesos de digitalización.</li>
+              <li>Colaboración en tareas básicas de ciberseguridad y protección de sistemas.</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tag">Microsoft 365</span>
+              <span class="tag">Azure AD</span>
+              <span class="tag">Active Directory</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item reveal">
+          <div class="tl-node"></div>
+          <span class="tl-date">MAR 2023 — JUN 2023</span>
+          <div class="tl-card">
+            <div class="tl-title-row">
+              <span class="tl-role">Estudiante en Prácticas · Técnico Informático</span>
+            </div>
+            <div class="tl-company"><b>Hospital Infanta Elena</b> · Huelva</div>
+            <ul class="tl-list">
+              <li>Soporte técnico en entorno sanitario, con alta exigencia y disponibilidad.</li>
+              <li>Resolución de incidencias de hardware, software y redes.</li>
+              <li>Instalación y configuración de equipos en distintos departamentos.</li>
+              <li>Soporte a personal sanitario y administrativo, garantizando la continuidad del servicio.</li>
+            </ul>
+            <div class="tl-tags">
+              <span class="tag">Hardware</span>
+              <span class="tag">Redes</span>
+              <span class="tag">Soporte técnico</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMACION -->
+  <section id="formacion">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">04 — Formación</p>
+          <h2>Formación académica</h2>
+        </div>
+        <span class="section-num">/formacion</span>
+      </div>
+
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <span class="edu-date">OCT 2025 — JUN 2026</span>
+          <h3>Especialización en Ciberseguridad</h3>
+          <div class="edu-center">IES La Marisma · Huelva</div>
+        </div>
+        <div class="edu-card reveal">
+          <span class="edu-date">SEP 2023 — JUN 2025</span>
+          <h3>CFGS Administración de Sistemas Informáticos en Red</h3>
+          <div class="edu-center">IES La Marisma · Huelva</div>
+        </div>
+        <div class="edu-card reveal">
+          <span class="edu-date">SEP 2021 — JUN 2023</span>
+          <h3>CFGM Sistemas Microinformáticos en Red</h3>
+          <div class="edu-center">IES La Marisma · Huelva</div>
+        </div>
+        <div class="edu-card reveal">
+          <span class="edu-date">2021</span>
+          <h3>Inglés B1 · Trinity College London</h3>
+          <div class="edu-center">Learning English School · San Juan del Puerto</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICACIONES -->
+  <section id="certificaciones">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">05 — Credenciales</p>
+          <h2>Certificaciones</h2>
+        </div>
+        <span class="section-num">/certificaciones</span>
+      </div>
+
+      <div class="cert-grid">
+        <div class="cert-card reveal">
+          <div class="cert-top">
+            <div class="cert-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
+            <div>
+              <h3>Sound the Alarm: Detection and Response</h3>
+              <div class="cert-issuer">Google · Coursera</div>
+            </div>
+          </div>
+          <span class="cert-date">EXPEDICIÓN: AGO 2026</span>
+          <p class="cert-skills"><b>Aptitudes:</b> Sistemas SIEM, Detección y Respuesta de Intrusiones y 4 aptitudes más</p>
+          <span class="cert-id">ID T0RJNWODC292</span>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-top">
+            <div class="cert-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
+            <div>
+              <h3>Assets, Threats, and Vulnerabilities</h3>
+              <div class="cert-issuer">Google · Coursera</div>
+            </div>
+          </div>
+          <span class="cert-date">EXPEDICIÓN: JUL 2026</span>
+          <span class="cert-id">ID KXZZG47N8S47</span>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-top">
+            <div class="cert-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
+            <div>
+              <h3>Tools of the Trade: Linux and SQL</h3>
+              <div class="cert-issuer">Google · Coursera</div>
+            </div>
+          </div>
+          <span class="cert-date">EXPEDICIÓN: JUL 2026</span>
+          <p class="cert-skills"><b>Aptitudes:</b> SQL, Linux y 5 aptitudes más</p>
+          <span class="cert-id">ID R1S0KPDD8M6I</span>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-top">
+            <div class="cert-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
+            <div>
+              <h3>Connect and Protect: Networks and Network Security</h3>
+              <div class="cert-issuer">Google · Coursera</div>
+            </div>
+          </div>
+          <span class="cert-date">EXPEDICIÓN: JUL 2026</span>
+          <p class="cert-skills"><b>Aptitudes:</b> Seguridad de redes, Ciberseguridad y 5 aptitudes más</p>
+          <span class="cert-id">ID IGJ7PQUD99WY</span>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-top">
+            <div class="cert-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
+            <div>
+              <h3>Play It Safe: Manage Security Risks</h3>
+              <div class="cert-issuer">Google · Coursera</div>
+            </div>
+          </div>
+          <span class="cert-date">EXPEDICIÓN: JUL 2026</span>
+          <p class="cert-skills"><b>Aptitudes:</b> Gestión de riesgos, Ciberseguridad y 5 aptitudes más</p>
+          <span class="cert-id">ID VSWI5MH1E8G7</span>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-top">
+            <div class="cert-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
+            <div>
+              <h3>Foundations of Cybersecurity</h3>
+              <div class="cert-issuer">Google · Coursera</div>
+            </div>
+          </div>
+          <span class="cert-date">EXPEDICIÓN: JUL 2026</span>
+          <p class="cert-skills"><b>Aptitudes:</b> Ciberseguridad, Seguridad de la información y 8 aptitudes más</p>
+          <span class="cert-id">ID JJTM4XI5CBIP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section id="habilidades">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">06 — Competencias</p>
+          <h2>Habilidades</h2>
+        </div>
+        <span class="section-num">/habilidades</span>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-pill reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Gestión de identidades y accesos</div>
+        <div class="skill-pill reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Hardening de sistemas</div>
+        <div class="skill-pill reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 8 9 9 5-1 9-4 9-9V7l-9-5Z"/></svg>Control de accesos</div>
+        <div class="skill-pill reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8m18 0-9 6-9-6m18 0-9-5-9 5"/></svg>Copias de seguridad</div>
+        <div class="skill-pill reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.7 3.86a2 2 0 0 0-3.4 0Z"/></svg>Gestión de vulnerabilidades</div>
+        <div class="skill-pill reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10-3-3"/></svg>Resolución de incidencias</div>
+        <div class="skill-pill reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Soporte remoto</div>
+        <div class="skill-pill reveal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Instalación y configuración de equipos</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="wrap">
+      <div class="contact-panel reveal">
+        <div>
+          <p class="eyebrow">07 — Contacto</p>
+          <h2>Hablemos de tu equipo de sistemas</h2>
+          <p>Disponible para procesos de selección de Técnico/Administrador de Sistemas, Redes, Soporte IT y Ciberseguridad junior. Respondo por correo o teléfono.</p>
+        </div>
+        <div class="contact-list">
+          <div class="contact-row">
+            <a href="mailto:asannchez.2005@gmail.com" style="display:flex; align-items:center; gap:14px; flex:1; min-width:0;">
+              <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
+              <span><span class="lbl">Email</span><br><span class="val">asannchez.2005@gmail.com</span></span>
+            </a>
+            <button class="copy-btn" data-copy="asannchez.2005@gmail.com" aria-label="Copiar email">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+          <div class="contact-row">
+            <a href="tel:+34642056031" style="display:flex; align-items:center; gap:14px; flex:1; min-width:0;">
+              <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+              <span><span class="lbl">Teléfono</span><br><span class="val">642 05 60 31</span></span>
+            </a>
+            <button class="copy-btn" data-copy="642 05 60 31" aria-label="Copiar teléfono">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+          </div>
+          <div class="contact-row" style="cursor:default;">
+            <span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span><span class="lbl">Ubicación</span><br><span class="val">San Juan del Puerto, Huelva</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Abel Sánchez Ramos — Administrador de Sistemas Junior · Huelva · Garantía Juvenil</div>
+</footer>
+
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+<button class="to-top" id="toTop" aria-label="Volver arriba">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(() => {
+  'use strict';
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ------------------------------------------------------------------
+   * 1. Scroll reveal — fade sections in as they enter the viewport
+   * ------------------------------------------------------------------ */
+  const revealTargets = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealTargets.forEach((el) => revealObserver.observe(el));
+
+  /* ------------------------------------------------------------------
+   * 2. Scroll progress bar
+   * ------------------------------------------------------------------ */
+  const progressBar = document.getElementById('scrollProgress');
+  const updateProgress = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  };
+
+  /* ------------------------------------------------------------------
+   * 3. Scrollspy — highlight the current section in the nav
+   * ------------------------------------------------------------------ */
+  const sections = [...document.querySelectorAll('main section[id]')];
+  const navLinks = document.querySelectorAll('[data-nav]');
+  const navLinksMobile = document.querySelectorAll('[data-nav-mobile]');
+
+  const setActiveNav = (id) => {
+    navLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+    navLinksMobile.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === `#${id}`));
+  };
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) setActiveNav(entry.target.id);
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  sections.forEach((s) => sectionObserver.observe(s));
+
+  /* ------------------------------------------------------------------
+   * 4. Mobile menu
+   * ------------------------------------------------------------------ */
+  const menuToggle = document.getElementById('menuToggle');
+  const menuClose = document.getElementById('menuClose');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  const openMenu = () => {
+    mobileMenu.classList.add('open');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeMenu = () => {
+    mobileMenu.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+
+  menuToggle.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+
+  /* ------------------------------------------------------------------
+   * 5. Combined scroll handler (progress bar + back-to-top button)
+   * ------------------------------------------------------------------ */
+  const toTopBtn = document.getElementById('toTop');
+  let ticking = false;
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateProgress();
+        toTopBtn.classList.toggle('show', window.scrollY > 600);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  updateProgress();
+
+  toTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
+  });
+
+  /* ------------------------------------------------------------------
+   * 6. Live clock — Europe/Madrid local time, ticks every second
+   * ------------------------------------------------------------------ */
+  const clockText = document.getElementById('clockText');
+  const formatter = new Intl.DateTimeFormat('es-ES', {
+    hour: '2-digit', minute: '2-digit', second: '2-digit',
+    timeZone: 'Europe/Madrid'
+  });
+  const tickClock = () => { clockText.textContent = formatter.format(new Date()); };
+  tickClock();
+  setInterval(tickClock, 1000);
+
+  /* ------------------------------------------------------------------
+   * 7. Panel path — brief typing effect on load, then stays static
+   * ------------------------------------------------------------------ */
+  const panelPath = document.getElementById('panelPath');
+  if (!reducedMotion && panelPath) {
+    const fullText = panelPath.textContent;
+    panelPath.textContent = '';
+    let i = 0;
+    const type = () => {
+      panelPath.textContent = fullText.slice(0, i);
+      i++;
+      if (i <= fullText.length) setTimeout(type, 28);
+    };
+    setTimeout(type, 300);
+  }
+
+  /* ------------------------------------------------------------------
+   * 8. Count-up metrics in the hero panel
+   * ------------------------------------------------------------------ */
+  const counters = document.querySelectorAll('[data-count]');
+  const runCount = (el) => {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    if (reducedMotion) { el.textContent = target; return; }
+    const duration = 900;
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        runCount(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6 });
+  counters.forEach((c) => counterObserver.observe(c));
+
+  /* ------------------------------------------------------------------
+   * 9. Toast notifications
+   * ------------------------------------------------------------------ */
+  const toastStack = document.getElementById('toastStack');
+  const showToast = (message) => {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10-3-3"/></svg><span>${message}</span>`;
+    toastStack.appendChild(toast);
+    setTimeout(() => toast.remove(), 2700);
+  };
+
+  /* ------------------------------------------------------------------
+   * 10. Copy to clipboard (email / phone)
+   * ------------------------------------------------------------------ */
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const value = btn.getAttribute('data-copy');
+      try {
+        await navigator.clipboard.writeText(value);
+      } catch (err) {
+        const ta = document.createElement('textarea');
+        ta.value = value;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      btn.classList.add('copied');
+      showToast(`Copiado: ${value}`);
+      setTimeout(() => btn.classList.remove('copied'), 1500);
+    });
+  });
+
+  /* ------------------------------------------------------------------
+   * 11. Hero network canvas — a quiet, low-motion topology backdrop.
+   *     Nodes drift slowly and connect to nearby neighbours, evoking
+   *     an infrastructure/network map without being a distraction.
+   * ------------------------------------------------------------------ */
+  const canvas = document.getElementById('heroCanvas');
+  if (canvas && !reducedMotion) {
+    const ctx = canvas.getContext('2d');
+    const heroSection = canvas.closest('.hero');
+    let width, height, nodes, rafId;
+    const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#49d5c4';
+
+    const rand = (min, max) => Math.random() * (max - min) + min;
+
+    const resize = () => {
+      width = heroSection.offsetWidth;
+      height = heroSection.offsetHeight;
+      canvas.width = width * devicePixelRatio;
+      canvas.height = height * devicePixelRatio;
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+
+      const density = Math.min(60, Math.max(26, Math.round((width * height) / 24000)));
+      nodes = Array.from({ length: density }, () => ({
+        x: rand(0, width),
+        y: rand(0, height),
+        vx: rand(-0.12, 0.12),
+        vy: rand(-0.1, 0.1),
+        r: rand(1, 2.2)
+      }));
+    };
+
+    const linkDist = () => Math.min(150, width / 6);
+
+    const draw = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      nodes.forEach((n) => {
+        n.x += n.vx;
+        n.y += n.vy;
+        if (n.x < 0 || n.x > width) n.vx *= -1;
+        if (n.y < 0 || n.y > height) n.vy *= -1;
+      });
+
+      const maxDist = linkDist();
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < maxDist) {
+            ctx.strokeStyle = `rgba(73, 213, 196, ${0.14 * (1 - dist / maxDist)})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      nodes.forEach((n) => {
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(73, 213, 196, 0.45)';
+        ctx.fill();
+      });
+
+      rafId = requestAnimationFrame(draw);
+    };
+
+    resize();
+    draw();
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        cancelAnimationFrame(rafId);
+        resize();
+        draw();
+      }, 180);
+    });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) cancelAnimationFrame(rafId);
+      else draw();
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
